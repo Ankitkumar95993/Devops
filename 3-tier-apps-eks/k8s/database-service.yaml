@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: postgres-db
+  namespace: 3-tier-app-eks
+  labels:
+    service: database
+spec: 
+  type: ExternalName
+  externalName:  my-eks-cluster-postgres.cz0a8ei24fsh.ap-south-1.rds.amazonaws.com
+  ports:
+  - port: 5432
+ 
